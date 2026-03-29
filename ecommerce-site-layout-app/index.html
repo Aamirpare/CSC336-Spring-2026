@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="logo">
+                    <label for="btn-brand">
+                        <input type="checkbox" id="btn-brand" hidden>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#1f1f1f">
+                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                        </svg>
+                    </label>
+                    <span>ProductX</span>
+                </li>
+                <li><a href="./about.html" title="About us">About us</a></li>
+                <li>
+                    <details>
+                        <summary title="Products">
+                            <a href="./pages/products.html">Products</a>
+                        </summary>
+                        <ul class="dropdown">
+                            <li><a href="./pages/product1.html">Product 1</a></li>
+                            <li><a href="./pages/product2.html">Product 2</a></li>
+                            <li><a href="./pages/product3.html">Product 3</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a href="./login.html" title="Login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <div class="filters">
+            <select name="price" id="price" title="price">
+                <option>All Prices</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <select name="brand" id="brand" title="brand">
+                <option>All Brands</option>
+                <option value="lenovo">Lenovo</option>
+                <option value="hp">HP</option>
+                <option value="dell">Dell</option>
+            </select>
+            <select name="color" id="color" title="color">
+                <option>All Colors</option>
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="blue">Blue</option>
+            </select>
+        </div>
+    </aside>
+    <main>
+        <div class="products-list">
+            <div class="product">
+                <img src="./images/laptop1.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price low">$400</span>
+                <span class="color blue">Blue</span>
+                <span class="brand lenovo">Lenovo</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop2.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price low">$400</span>
+                <span class="color black">Black</span>
+                <span class="brand lenovo">Lenovo</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop3.jpg" alt="" width="300px">
+                <p>HP Elitebook G8 840</p>
+                <span class="price high">$500</span>
+                <span class="color blue">Blue</span>
+                <span class="brand hp">HP</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop4.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price high">$600</span>
+                <span class="color black">Black</span>
+                <span class="brand lenovo">Lenovo</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop5.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price high">$650</span>
+                <span class="color black">Black</span>
+                <span class="brand dell">Dell</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop6.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price high">$600</span>
+                <span class="color blue">Blue</span>
+                <span class="brand lenovo">Lenovo</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop7.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price low">$400</span>
+                <span class="color black">Black</span>
+                <span class="brand lenovo">Lenovo</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop8.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price medium">$500</span>
+                <span class="color white">White</span>
+                <span class="brand lenovo">Lenovo</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop9.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price high">$500</span>
+                <span class="color white">White</span>
+                <span class="brand dell">Dell</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop10.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price medium">$500</span>
+                <span class="color black">Black</span>
+                <span class="brand lenovo">Lenovo</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop11.jpg" alt="" width="300px">
+                <p>HP ProBook 440 G2</p>
+                <span class="price low">$400</span>
+                <span class="color blue">Blue</span>
+                <span class="brand hp">HP</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop12.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price medium">$500</span>
+                <span class="color white">White</span>
+                <span class="brand lenovo">Lenovo</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop13.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price medium">$500</span>
+                <span class="color black">Black</span>
+                <span class="brand dell">Dell</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop14.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price low">$480</span>
+                <span class="color blue">Blue</span>
+                <span class="brand lenovo">Lenovo</span>
+            </div>
+            <div class="product">
+                <img src="./images/laptop15.jpg" alt="" width="300px">
+                <p>Lenovo X1 Yoga</p>
+                <span class="price low">$450</span>
+                <span class="color black">Black</span>
+                <span class="brand lenovo">Lenovo</span>
+            </div>
+
+            <!-- <img src="laptop1.jpg" alt="" width="300px">
+        <img src="laptop2.jpg" alt="" width="300px">
+        <img src="laptop3.jpg" alt="" width="300px">
+        <img src="laptop4.jpg" alt="" width="300px">
+        <img src="laptop5.jpg" alt="" width="300px">
+        <img src="laptop6.jpg" alt="" width="300px">
+        <img src="laptop7.jpg" alt="" width="300px">
+        <img src="laptop8.jpg" alt="" width="300px">
+        <img src="laptop9.jpg" alt="" width="300px">
+        <img src="laptop10.jpg" alt="" width="300px">
+        <img src="laptop11.jpg" alt="" width="300px">
+        <img src="laptop12.jpg" alt="" width="300px">
+        <img src="laptop13.jpg" alt="" width="300px">
+        <img src="laptop14.jpg" alt="" width="300px"> -->
+        </div>
+    </main>
+    <footer>
+        Unitubecore&copy; 2018 - 2026
+    </footer>
+</body>
+
+</html>

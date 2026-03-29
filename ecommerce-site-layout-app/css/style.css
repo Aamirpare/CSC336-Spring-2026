@@ -1,0 +1,328 @@
+ :root {
+     /* --clr-header-bg: rgba(133, 130, 130, 1.0);
+            --clr-footer-bg: rgba(0, 0, 0, 0.5);
+            --clr-sidebar-bg: rgba(0, 0, 0, 0.4); */
+
+     --clr-header-bg: rgba(69, 91, 214, 1.0);
+     --clr-footer-bg: var(--clr-header-bg);
+     --clr-sidebar-bg: rgba(36, 36, 196, 0.8);
+     --clr-header-text: rgb(247, 240, 240);
+     --clr-popover-bg: rgba(50, 60, 200, 1.0);
+     --clr-hover-bg: rgba(101, 149, 245, 0.9);
+     --time-duration: 0.5s;
+ }
+
+ /*define animation for product scrolling*/
+ @keyframes appear {
+     from {
+         opacity: 0.5;
+         scale: 0.5;
+     }
+
+     to {
+         opacity: 1;
+         scale: 1;
+     }
+ }
+
+ body {
+     font-family: sans-serif, Arial, Helvetica;
+     font-size: 1rem;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     min-width: 100dvh;
+     min-height: 100dvh;
+     overflow: hidden;
+     overflow-y: auto;
+
+     display: grid;
+     grid-template-columns: 250px 1fr;
+     grid-template-areas:
+         " header header"
+         " aside  main"
+         " aside  footer";
+
+     transition: grid-template-columns var(--time-duration) ease;
+
+     &:has(#btn-brand:checked) {
+         grid-template-columns: 0 1fr;
+
+         aside {
+             translate: -100%;
+             transition: translate var(--time-duration) ease;
+         }
+     }
+
+     header {
+         grid-area: header;
+         background-color: var(--clr-header-bg);
+         top: 0;
+         position: sticky;
+         z-index: 100;
+
+         nav {
+             >ul {
+                 height: 60px;
+                 padding: 0;
+                 margin: 0;
+                 list-style-type: none;
+                 display: flex;
+                 align-items: center;
+
+                 /*First Item of UL in the nav specified for the Logo*/
+                 > :first-child {
+                     margin-right: auto;
+                     font-family: sans-serif;
+                     font-size: 1.5rem;
+                     font-weight: 800;
+                     color: var(--clr-header-text);
+
+                     >label {
+                         position: relative;
+                         top: 3px;
+                     }
+
+                     svg {
+                         fill: var(--clr-header-text);
+                         cursor: pointer;
+                     }
+
+                     &:hover {
+                         background-color: transparent;
+                         cursor: pointer;
+                     }
+                 }
+
+                 /*Other than the first the elements of UL in the nav*/
+                 li {
+                     padding: 10px 15px;
+                     position: relative;
+
+                     &:hover {
+                         background-color: var(--clr-hover-bg);
+                     }
+
+                     a {
+                         text-decoration: none;
+                         color: #222;
+                         color: var(--clr-header-text);
+                     }
+
+                     details {
+                         interpolate-size: allow-keywords;
+
+                         >summary {
+                             /*To seperate the bounding box*/
+                             /* list-style-position: outside; */
+
+                             &::marker {
+                                 color: var(--clr-header-text);
+                                 /* content: url('data:image/svg+xml,<svg height="1em" width="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="black" d="M12 16.725L16.725 12 12 7.275 10.346 8.93l1.89 1.89h-4.96v2.36h4.96l-1.89 1.89zm0 7.087q-2.45 0-4.607-.93-2.156-.93-3.75-2.525-1.595-1.593-2.525-3.75Q.188 14.45.188 12q-.002-2.45.93-4.607t2.525-3.75q1.592-1.594 3.75-2.525Q9.55.188 12 .188q2.45 0 4.607.93 2.158.93 3.75 2.525 1.593 1.593 2.526 3.75.933 2.157.93 4.607-.004 2.45-.93 4.607-.93 2.157-2.526 3.75-1.597 1.594-3.75 2.526-2.154.932-4.607.93"/></svg>'); */
+                             }
+
+                             &:hover {
+                                 cursor: pointer;
+                             }
+                         }
+
+                         &[open]>summary::marker {
+                             color: var(--clr-popover-bg);
+                         }
+
+                         ul {
+                             position: relative;
+                             display: flex;
+                             flex-direction: column;
+                             list-style-type: none;
+                             padding-inline-start: 0;
+                             width: 125px;
+                             margin: 10px;
+
+                             li::before {
+                                 position: absolute;
+                                 content: "";
+                                 width: 10px;
+                                 height: 10px;
+                                 background: rgba(187, 184, 187, 0.667);
+                                 box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+                                 border-radius: 50%;
+                                 left: 5px;
+                                 top: 14px;
+                             }
+
+                             a {
+                                 color: #fff;
+                                 padding-left: 10px;
+                             }
+                         }
+                     }
+
+                     details::details-content {
+                         block-size: 0;
+                         transition: content-visibility, block-size;
+                         transition-duration: var(--time-duration);
+                         transition-behavior: allow-descrete;
+                         overflow: hidden;
+                     }
+
+                     details[open]::details-content {
+                         block-size: auto;
+                         position: absolute;
+                         top: 40px;
+                         background-color: var(--clr-popover-bg);
+                     }
+                 }
+             }
+         }
+     }
+
+     aside {
+         grid-area: aside;
+         background-color: var(--clr-sidebar-bg);
+         height: calc(100dvh - 60px);
+         position: sticky;
+         top: 60px;
+         align-self: self-start;
+         overflow: hidden;
+         overflow-y: auto;
+
+         .filters {
+             display: grid;
+             margin: 10px;
+
+             select {
+                 width: 100%;
+                 padding: 10px;
+                 border-radius: 6px;
+                 margin-bottom: 15px;
+                 background-color: var(--clr-header-text);
+                 color: #333;
+                 appearance: none;
+                 /* Removes default browser styling */
+                 -webkit-appearance: none;
+                 /* For Safari */
+                 -moz-appearance: none;
+                 /* For Firefox */
+                 cursor: pointer;
+                 background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 viewBox%3D%220 0 4 5%22%3E%3Cpath fill%3D%22%23007BFF%22 d%3D%22M2 0L0 2h4z%22/%3E%3C/svg%3E');
+                 background-repeat: no-repeat;
+                 background-position: right 10px center;
+                 background-size: 10px;
+
+                 option {
+                     cursor: pointer;
+                     background-color: var(--clr-sidebar-bg);
+                     color: var(--clr-header-text);
+                     border-radius: 6px;
+
+                     &:checked {
+                         background-color: var(--clr-hover-bg);
+                     }
+                 }
+             }
+         }
+     }
+
+     main {
+         grid-area: main;
+         margin: 10px 15px;
+         min-height: calc(100vh - 60px - 60px - 20px);
+         min-height: calc(100dvh - 60px - 60px - 20px);
+
+         >.products-list {
+             width: min(1000px, 100%);
+             margin: 0 auto;
+             columns: 200px 4;
+             gap: 1em;
+
+             /*display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
+
+
+             >.product {
+                 display: flex;
+                 flex-direction: column;
+                 /* margin-bottom: 1em; */
+                 animation: appear linear;
+                 animation-timeline: view();
+                 animation-range: entry 0% cover;
+                 break-inside: avoid-column;
+
+                 img {
+                     width: 100%;
+                     display: block;
+                     margin-bottom: 1em;
+                     border-radius: 0.4em;
+
+                     /*Animate on scroll...*/
+                     /* animation: appear linear;
+                            animation-timeline: view();
+                            animation-range: entry 0% cover; */
+                 }
+
+                 &:has(img) {
+                     img:is(:hover) {
+                         cursor: pointer;
+                         transform: scale(1.5);
+                         /*box-shadow: 5px 5px 1rem #333;
+                                border-radius: 0.5em; */
+                         transition: transform 2s ease;
+                         filter: brightness(125%);
+                         /*filter: sepia(20); */
+                     }
+                 }
+             }
+         }
+     }
+
+     footer {
+         grid-area: footer;
+         background-color: var(--clr-footer-bg);
+         color: var(--clr-header-text);
+         min-height: 60px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     }
+
+     /*Filters*/
+     /*Color Filter*/
+     aside:has(option[value="black"]:checked)~main .product:not(:has(> .black)) {
+         display: none;
+     }
+
+     aside:has(option[value="blue"]:checked)~main .product:not(:has(> .blue)) {
+         display: none;
+     }
+
+     aside:has(option[value="white"]:checked)~main .product:not(:has(> .white)) {
+         display: none;
+     }
+
+     /*Brand Filter*/
+     aside:has(option[value="lenovo"]:checked)~main .product:not(:has(> .lenovo)) {
+         display: none;
+     }
+
+     aside:has(option[value="hp"]:checked)~main .product:not(:has(> .hp)) {
+         display: none;
+     }
+
+     aside:has(option[value="dell"]:checked)~main .product:not(:has(> .dell)) {
+         display: none;
+     }
+
+     /*Price Filter*/
+     aside:has(option[value="low"]:checked)~main .product:not(:has(> .low)) {
+         display: none;
+     }
+
+     aside:has(option[value="medium"]:checked)~main .product:not(:has(> .medium)) {
+         display: none;
+     }
+
+     aside:has(option[value="high"]:checked)~main .product:not(:has(> .high)) {
+         display: none;
+     }
+ }
