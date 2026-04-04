@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout | Home Page</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        /*
+            1. Grid Layout
+               - Columns and Rows 
+               - Two Dimensional Layout
+               - Simillar to Flex but in one dimension
+        */
+        .grid-container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 60px 1fr 60px;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+        }
+
+        .header,
+        .footer {
+            background-color: #333;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #3339;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #3334;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header"></div>
+        <div class="sidebar"></div>
+        <div class="main"></div>
+        <div class="footer"></div>
+</body>
+
+</html>

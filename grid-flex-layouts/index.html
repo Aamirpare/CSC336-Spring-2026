@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: #000;
+        }
+
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 16px;
+            overflow: hidden;
+        }
+
+        body:has(input:checked) aside {
+            flex-basis: 0;
+        }
+
+        [type="checkbox"] {
+            display: none;
+        }
+
+        header,
+        footer {
+            background-color: #333;
+            height: 60px;
+            color: #fff;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav {
+            padding: 0 10px;
+            height: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav a:hover {
+            background-color: #09e;
+        }
+
+        header nav>a:first-child {
+            font-size: 1.5rem;
+            margin-right: auto;
+        }
+
+        main {
+            height: calc(100vh - 120px);
+            display: flex;
+        }
+
+        aside {
+            flex-basis: 200px;
+            background-color: #3339;
+            overflow-y: auto;
+            transition: flex-basis 0.5s ease-in-out;
+        }
+
+        aside>nav {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        aside nav a:first-child {
+            margin-top: 50px;
+        }
+
+        section {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .page-content {
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#">
+                <label for="chckToggle">
+                    <input type="checkbox" id="chckToggle">
+                    Home
+                </label>
+            </a>
+            <a href="#">Serices</a>
+            <a href="#">People</a>
+            <a href="#">Login</a>
+        </nav>
+    </header>
+    <main>
+        <aside>
+            <nav>
+                <a href="#"> Profile</a>
+                <a href="#">Dashboard</a>
+                <a href="#">Settings</a>
+                <a href="#">Analytics</a>
+                <a href="">link-1</a><a href="">link-2</a><a href="">link-3</a><a href="">link-4</a><a
+                    href="">link-5</a><a href="">link-6</a><a href="">link-7</a><a href="">link-8</a><a
+                    href="">link-9</a><a href="">link-10</a><a href="">link-11</a><a href="">link-12</a><a
+                    href="">link-13</a><a href="">link-14</a><a href="">link-15</a><a href="">link-16</a><a
+                    href="">link-17</a><a href="">link-18</a><a href="">link-19</a><a href="">link-20</a><a
+                    href="">link-21</a><a href="">link-22</a><a href="">link-23</a><a href="">link-24</a><a
+                    href="">link-25</a>
+            </nav>
+        </aside>
+        <section>
+            <div class="page-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ea, aut sequi est debitis quisquam
+                    explicabo sit consequuntur odit ipsum nulla inventore soluta itaque placeat rerum totam cupiditate
+                    provident. Nam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis delectus dolor mollitia cupiditate
+                    consequuntur voluptatibus reprehenderit officiis est illum, adipisci nesciunt. Porro, eligendi vero
+                    dicta laborum provident repellendus eum alias?</p>
+                <p>Fugit omnis doloribus dolore atque itaque excepturi illo laboriosam molestiae odit temporibus veniam
+                    cupiditate consectetur ipsum, nostrum vitae voluptatum eveniet sapiente ratione dolorum repellendus
+                    nemo repellat vel non? Eaque, dolorum!</p>
+                <p>Quidem voluptatem totam, velit explicabo accusantium ratione voluptatum dignissimos. Vel animi eius
+                    sunt quasi dolorem suscipit, quia consequatur reprehenderit mollitia, voluptas, eos quod eligendi
+                    porro placeat! In aliquam earum corporis.</p>
+                <p>Saepe minima blanditiis fuga autem praesentium quae voluptate, ipsam vitae distinctio? Eligendi,
+                    assumenda ea voluptatum porro at laborum id quaerat cupiditate ex ullam aspernatur? Quo velit
+                    tempore molestiae vitae labore.</p>
+                <p>Rerum, nam neque consequatur cupiditate est ullam culpa aliquid voluptatum temporibus assumenda
+                    eligendi dolorum nostrum, cum minus at, animi repellendus consequuntur tempora. Voluptatibus
+                    sapiente voluptatum nisi velit quisquam! Magnam, soluta.</p>
+                <p>Dolore optio omnis velit officiis, asperiores quo veritatis consequatur vel itaque illo ut dolores
+                    possimus reprehenderit? Deleniti, veritatis repudiandae est nemo nesciunt veniam consequuntur, iure,
+                    illum doloremque dolorum eligendi dolores!</p>
+                <p>Debitis sint illum libero amet est maxime nulla. Dignissimos quas blanditiis, officia deserunt
+                    temporibus perferendis quod cum asperiores praesentium laudantium ducimus sunt atque quo iure quae a
+                    ad! Esse, nulla.</p>
+                <p>Soluta, tempora. Consequatur quae odit explicabo repudiandae. A reiciendis iusto explicabo eveniet
+                    labore ea harum! Laboriosam dicta tempora quia perferendis blanditiis. Reiciendis facilis pariatur
+                    iusto quasi id voluptas esse accusamus?</p>
+                <p>Porro odio ea inventore. Aliquam et repellat harum facere consequatur laboriosam praesentium hic
+                    reprehenderit velit itaque illum magni iusto est quasi repellendus nulla amet, odio fuga quis vel
+                    quae cupiditate.</p>
+                <p>Tempore nam sequi itaque at voluptate in quia similique officiis explicabo eos? Amet est velit fuga
+                    ratione ipsum quaerat repellendus, voluptatem corrupti repellat soluta rem eum ipsa pariatur
+                    blanditiis consectetur!</p>
+                <p>Error excepturi mollitia tempore rerum illo. Maxime ullam quidem quae, aspernatur dolor reiciendis
+                    modi iste. Porro quaerat eligendi eum omnis accusantium error rerum voluptate commodi, culpa quam
+                    vel iure aliquid.</p>
+                <p>Eaque eos libero explicabo dolores obcaecati, laudantium laboriosam quaerat eligendi distinctio
+                    repudiandae saepe voluptates vel autem sint officia vero laborum quia est similique! Repudiandae
+                    voluptatem eveniet ad perferendis quo dicta?</p>s
+            </div>
+        </section>
+    </main>
+    <footer>
+        This Site is under construction
+    </footer>
+</body>
+
+</html>
