@@ -1,0 +1,130 @@
+/*
+    Author      :  Aamir Pare
+    Description :  Lecture on Form Validation
+    Date        :  20th April 2026
+    Mode        :  Online
+    Location    :  G-11/4 Home, Islamabad
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+.container {
+    width: clamp(600px, 60%, 100%);
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #3332;
+    background: linear-gradient(45deg, #c5e4bd, #bcc9be36), url('./bg.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px #9f9f9f;
+    color: #1f8870;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+/* form>.form-group {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+.form-group:has([type="button"]) {
+    grid-column: -1/-1;
+    justify-self: end;
+}
+
+form [id^="error"] {
+    display: none;
+    color: red;
+    margin-left: 200px;
+    width: 100%;
+    text-align: justify;
+}
+
+form input,
+button:not([type="submit"]) {
+    border: none;
+    border: 0.05rem solid;
+    border-radius: 6px;
+    padding: 8px 10px
+}
+
+button:not([type="submit"]) {
+    border: none;
+    padding: 10px 15px;
+    background-color: #bababa;
+    border-radius: 6px;
+}
+
+button:not([type="submit"]):hover {
+    cursor: pointer;
+    transform: scale(0.98);
+} */
+
+form .input-group {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    text-align: right;
+}
+
+.input-group label {
+    margin-right: 8px;
+}
+
+.input-group label::after {
+    content: ":";
+    padding-left: 2px;
+    font-weight: 600;
+}
+
+.form-group:has([type="submit"]) {
+    grid-column: -1/-1;
+    justify-self: end;
+}
+
+form .error-message {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+form [id^="error"] {
+    display: none;
+    color: red;
+    margin-left: 200px;
+}
+
+form input {
+    border: none;
+    border: 0.05rem solid;
+    border-radius: 6px;
+    padding: 8px 10px;
+    outline: none;
+}
+
+input:focus-visible {
+    outline: #1f8870 solid 0.08rem;
+}
+
+button[type="submit"] {
+    border: none;
+    padding: 10px 15px;
+    background-color: #1f8870;
+    border-radius: 6px;
+    color: #fff;
+}
+
+button[type="submit"]:hover {
+    cursor: pointer;
+    transform: scale(0.98);
+}

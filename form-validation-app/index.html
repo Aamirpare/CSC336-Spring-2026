@@ -1,0 +1,72 @@
+<!--
+/*
+    Author      :  Aamir Pare
+    Description :  Lecture on Form Validation
+    Date        :  20th April 2026
+    Mode        :  Online
+    Location    :  G-11/4 Home, Islamabad
+*/
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./froms.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>User Registration Form</h1>
+        <form id="user-registration-form" action="">
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="username">Useranme</label>
+                    <input type="text" name="username" id="username" title="Username">
+                </div>
+                <div class="error-message">
+                    <span id="error-username">Username must be atleast 5 characters long</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" title="Email">
+                </div>
+                <div class="error-message">
+                    <span id="error-email">Invalid email address</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" title="Password">
+                </div>
+                <div class="error-message">
+                    <span id="error-password">Password must be atleast 6 characters long</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" name="confirm-password" id="confirm-password" title="Confirm Password">
+                </div>
+                <div class="error-message">
+                    <span id="error-confirm-password">Confirm Password must match</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="submit" title="Click to submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="./forms.js"></script>
+</body>
+
+</html>
